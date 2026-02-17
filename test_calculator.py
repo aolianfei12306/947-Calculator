@@ -37,7 +37,7 @@ def test_basic_division():
 def test_division_by_zero():
     """Test division by zero raises error"""
     with pytest.raises(ZeroDivisionError):
-        result = 10 / 0
+        _ = 10 / 0
 
 
 def test_scientific_square_root():

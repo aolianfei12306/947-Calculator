@@ -42,6 +42,9 @@ with tab1:
     
     if st.button("计算 / Calculate", key="basic_calc"):
         try:
+            result = None
+            op_symbol = ""
+            
             if "加法" in operation or "Addition" in operation:
                 result = num1 + num2
                 op_symbol = "+"
@@ -54,12 +57,10 @@ with tab1:
             elif "除法" in operation or "Division" in operation:
                 if num2 == 0:
                     st.error("错误：除数不能为0 / Error: Division by zero")
+                    result = None
                 else:
                     result = num1 / num2
                     op_symbol = "÷"
-            else:
-                result = None
-                op_symbol = ""
             
             if result is not None:
                 st.success(f"结果 / Result: {num1} {op_symbol} {num2} = {result}")
